@@ -1,4 +1,11 @@
 
+// passing event handlers to the child
+function Button({onClick, children}){
+    return (
+        <button onClick={onClick}>{children}</button>
+    )
+}
+
 export function NextButton({Index, setIndex, totalImages}){
 
     function Next() {
@@ -6,7 +13,7 @@ export function NextButton({Index, setIndex, totalImages}){
     }
 
     return (
-        <button onClick={Next}>Next</button>
+       <Button onClick={Next}>Next</Button>
     )
 }
 
@@ -20,3 +27,4 @@ export function MoreButton({ShowMore, setShowMore}){
       <button onClick={changeShow}>{ShowMore ? "Hide Details": "Show Details"}</button>
     )
 }
+

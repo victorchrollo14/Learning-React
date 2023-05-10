@@ -1,7 +1,6 @@
 import { NextButton, MoreButton } from "./Buttons";
 import { Description } from "./Description";
-import { sculptureList } from "./Utils/data";
-import img1 from "./assets/img1.jpg"
+import { sculptureList } from "./data";
 
 import { useState } from "react";
 
@@ -23,7 +22,7 @@ export function Gallery() {
         <br />
         <Description description={sculptor.description} ShowMore={ShowMore}/>
         <img 
-        src={img1} alt={sculptor.alt} />
+        src={sculptor.url} alt={sculptor.alt} />
         </>
 
         
