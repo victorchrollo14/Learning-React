@@ -1,17 +1,31 @@
-import { Button } from "./Buttons";
+import { NextButton, MoreButton } from "./Buttons";
+import { Description } from "./Description";
+import { sculptureList } from "./Utils/data";
+import img1 from "./assets/img1.jpg"
+
+import { useState } from "react";
 
 
-export function Gallery({id, name, artist, description, url, alt, totalImages}) {
+export function Gallery() {
+
+    const [Index, setIndex] = useState(0);
+    const [ShowMore, setShowMore] = useState(false);
+
+    const totalImages = sculptureList.length - 1;
+    const sculptor = sculptureList[Index];    
+
     return (
         <>
-        <Button name={"Next"}/>
-        <h3> {name} by {artist} </h3>
-        <p>({id} of {totalImages})</p>
-        <Button name = {"show Details"}/>
+        <NextButton  Index={Index} setIndex={setIndex} totalImages={totalImages}/>
+        <h3> {sculptor.name} by {sculptor.artist} </h3>
+        <p>({Index + 1} of {totalImages + 1})</p>
+        <MoreButton ShowMore={ShowMore} setShowMore={setShowMore} />
         <br />
+        <Description description={sculptor.description} ShowMore={ShowMore}/>
         <img 
-        src={url} alt={alt} />
+        src={img1} alt={sculptor.alt} />
         </>
+
         
     )
 }
