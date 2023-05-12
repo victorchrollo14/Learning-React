@@ -1,6 +1,6 @@
 
 // passing event handlers to the child
-function Button({onClick, children}){
+export function Button({onClick, children}){
     return (
         <button onClick={onClick}>{children}</button>
     )
