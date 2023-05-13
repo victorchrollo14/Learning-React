@@ -21,14 +21,21 @@ export function ListItems({ todos, setTodos }) {
     });
 
     function toggleToDo(id, completed) {
-      let currentTodo = todos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, completed };
-        }
-        return todo;
-      });
+      // Bad: Do not mutate directly
+      // let currentTodo = todos.map((todo) => {
+      //   if (todo.id === id) {
+      //     return { ...todo, completed };
+      //   }
+      //   return todo;
+      // });
 
-      setTodos(currentTodo);
+      // Good
+      setTodos((currentTodo) => todos.map(todo => {
+        if (todo.id === id) {
+          return {...todo, completed}
+        }
+        return todo
+      }));
     }
 
     function deleteToDo(id) {

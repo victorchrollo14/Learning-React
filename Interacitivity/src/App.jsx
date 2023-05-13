@@ -9,8 +9,7 @@ import { ObjectState } from "./ObjectState";
 function App() {
   return (
     <>
-      <ArrayState />
-      <BucketList />
+     <Gallery />
     </>
   );
 }
