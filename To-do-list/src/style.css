@@ -113,7 +113,7 @@
     position: absolute; */
   }
   
-  .list li label::before {
+  /* .list li label::before {
     content: "";
     display: block;
     width: 0rem;
@@ -123,9 +123,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
   
-  .list li label:hover::before {
+  /* .list li label:hover::before {
     background: hsl(200, 100%, 80%);
   }
   
@@ -140,4 +140,4 @@
   .list li:has(input:checked) label:hover::before {
     background: hsl(200, 100%, 30%);
   }
- 
+  */

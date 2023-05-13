@@ -1,13 +1,18 @@
 import { useState } from 'react'
-import './App.css'
+import "./style.css"
+
+import { Form } from './Form'
+import { ListItems } from './ListItems'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState([])
 
   return (
     <>
-      <Form />
-      <ListItems />
+      <Form setTodos={setTodos} todos={todos}/>
+      <h1>To Do List</h1>
+      <ListItems todos={todos} setTodos={setTodos}/>
     </>
   )
 }
