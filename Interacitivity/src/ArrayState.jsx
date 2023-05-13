@@ -20,17 +20,20 @@ export function ArrayState() {
       />
       <button onClick={addArtist}>Add</button>
       <ul>
-        {artists.map(artist => (
-          <>
-            <div style={{ display: "flex", flexDirection: "row" }}>
-              <li key={artist.id}>{artist.name}
-              <button onClick={() => setArtists(artists.filter((a) => a.id !== artist.id))}>
-                delete
-              </button>
+        {artists.map((artist) => (
+              <li
+                key={artist.id}
+                style={{ display: "flex", flexDirection: "row" }}
+              >
+                {artist.name} {artist.id}
+                <button
+                  onClick={() =>
+                    setArtists(artists.filter((a) => a.id !== artist.id))
+                  }
+                >
+                  delete
+                </button>
               </li>
-             
-            </div>
-          </>
         ))}
       </ul>
     </>
