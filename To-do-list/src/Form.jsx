@@ -7,7 +7,7 @@ export function Form({todos, setTodos}) {
         e.preventDefault()
         let newTodo = [
             ...todos,
-            {id: crypto.randomUUID(), task:userInput, completed:false },
+            {id: crypto.randomUUID(), task:userInput, completed:false, isShown: false},
         ]
         setTodos(newTodo)
     }

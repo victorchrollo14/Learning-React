@@ -8,7 +8,7 @@ function App() {
   const [todos, setTodos] = useState(() => {
     const savedTasks = localStorage.getItem("Items");
     const parsedValue = JSON.parse(savedTasks);
-    return parsedValue || " ";
+    return parsedValue || [];
   });
 
   useEffect(() => {
