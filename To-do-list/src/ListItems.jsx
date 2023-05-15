@@ -61,10 +61,9 @@ export function ListItems({ todos, setTodos }) {
   }
 
   function setIsShown(truth, id) {
-      setTodos((currentTodo) => currentTodo.map(todo => {
-        if (todo.id === id) return {...todo, isShown: truth}
-        return {...todo, isShown: false}
-      }))
+      setTodos((currentTodo) => currentTodo.map(todo => 
+        todo.id === id? {...todo, isShown: truth}: {...todo, isShown: false}
+      ))
   }
 
   function handleChange(e) {
@@ -84,9 +83,7 @@ export function ListItems({ todos, setTodos }) {
   }
 
   function deleteToDo(id) {
-    let currentTodo = todos.filter((todo) => {
-      return todo.id !== id;
-    });
+    let currentTodo = todos.filter(todo => todo.id !== id );
     setTodos(currentTodo);
   }
 

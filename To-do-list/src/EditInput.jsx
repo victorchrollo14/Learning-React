@@ -1,5 +1,4 @@
 export function EditInput({ task, onChange, isShown, id}) {
-    console.log(task)
     if (isShown) {
       return (
         <input
