@@ -1,54 +1,41 @@
-import {useState} from "react"
+import { useState } from "react";
 
 export function EditProfile() {
-  const [firstName, setFirstName] = useState("Jane")
-  const [lastName, setLastName] = useState("Jacobs")
-  const [fnameIsSeen, setFnameIsSeen] = useState(true)
-  const [lnameIsSeen, setLnameIsSeen] = useState(true)
-  const [editMode, setEditMode] = useState(false)
+  const [firstName, setFirstName] = useState("Jane");
+  const [lastName, setLastName] = useState("Jacobs");
+  const [editMode, setEditMode] = useState(false);
 
-  let fullName = `${firstName} ${lastName}`
   function handleSubmit(e) {
     e.preventDefault();
-    let string = e.target.innerText
+    let string = e.target.innerText;
 
-    if(string.includes("Edit Profile")){
-        setFnameIsSeen(false)
-        setLnameIsSeen(false)
-        setEditMode(true)
-    }
-    else {
-        setFnameIsSeen(true)
-        setLnameIsSeen(true)
-        setEditMode(false)
-    }
-    
-    
+    string.includes("Edit Profile") ? setEditMode(true) : setEditMode(false);
   }
-  function handleFname(e){
-      setFirstName(e.target.value)
+
+  function handleFname(e) {
+    setFirstName(e.target.value);
   }
 
   function handleLname(e) {
-    setLastName(e.target.value)
+    setLastName(e.target.value);
   }
-  
+
   return (
     <form onSubmit={handleSubmit} className="flex">
-      <label >
-        First name:{' '}
-        {fnameIsSeen?<b>{firstName}</b>:null}
-        {fnameIsSeen? null: <input value={firstName} onChange={handleFname}/>}
+      <label>
+        First name: {editMode ? null : <b>{firstName}</b>}
+        {editMode ? <input value={firstName} onChange={handleFname} /> : null}
       </label>
       <label>
-        Last name:{' '}
-        {lnameIsSeen?<b>{lastName}</b>:null}
-        {lnameIsSeen? null: <input value={lastName} onChange={handleLname}/>}
+        Last name: {editMode ? null : <b>{lastName}</b>}
+        {editMode ? <input value={lastName} onChange={handleLname} /> : null}
       </label>
-      <button type="submit" >
-        {editMode? "Save Profile": "Edit Profile"}
-      </button>
-      <p><i>Hello, {fullName}!</i></p>
+      <button type="submit">{editMode ? "Save " : "Edit "} Profile</button>
+      <p>
+        <i>
+          Hello, {firstName} {lastName}!
+        </i>
+      </p>
     </form>
   );
 }
