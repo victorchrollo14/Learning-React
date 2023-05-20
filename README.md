@@ -7,11 +7,18 @@
     <li> Functional components  ✔ </li>
     <li> State and props  ✔ </li>
     <li> Hooks (useState and useEffect)  ✔ </li>
-  <li> conditional rendering  ✔ </li>
+   <li> conditional rendering  ✔ </li>
     <li> Routers  ❌</li>
-    <li> State Management  ❌ </li>
-    <li> Custom hooks and common hooks ❌</li>
-    <li> Testing (Jest) ❌</li>
+    <li> Redux State Management  ❌ </li>
+  <li>Common hooks </li>
+    <ol> 
+      <li>(useContext ❌)</li>
+      <li>(useRef ❌)</li>
+      <li>(useReducer ❌)</li>
+      <li>(useMemo ❌)</li>
+      <li>(custom hooks ❌)</li>
+     </ol>
+    <li> Testing (Jest and React testing Library) ❌</li>
     <li> Class Components ❌</li>
     <li> Advanced Topics ❌</li>  
  </ul>
