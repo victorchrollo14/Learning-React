@@ -1,20 +1,27 @@
 import { useState, useCallback } from "react";
 
-export function Form({ todos, setTodos }) {
+export function Form({ todos, dispatch }) {
   const [userInput, setUserInput] = useState(" ");
 
   function addToDo(e) {
     e.preventDefault();
-    let newTodo = [
-      ...todos,
-      {
+    // let newTodo = [
+    //   ...todos,
+    //   {
+    //     id: crypto.randomUUID(),
+    //     task: userInput,
+    //     completed: false,
+    //     isShown: false,
+    //   },
+    // ];
+    // setTodos(newTodo);
+    dispatch({
+        type: "add",
         id: crypto.randomUUID(),
         task: userInput,
         completed: false,
         isShown: false,
-      },
-    ];
-    setTodos(newTodo);
+    }) 
   }
 
   const handleChange = useCallback((e) => {

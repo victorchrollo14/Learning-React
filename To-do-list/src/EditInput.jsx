@@ -5,7 +5,7 @@ export function EditInput({ task, onChange, isShown, id}) {
           type="text"
           name="todo-task"
           className="todoinput"
-          id=""
+          id={id}
           value={task}
           onChange={onChange}
         />
