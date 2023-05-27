@@ -12,12 +12,17 @@ function App() {
   //   return parsedValue || [];
   // });
 
-  // useEffect(() => {
-  //   localStorage.setItem("Items", JSON.stringify(todos));
-  // }, [todos]);
+  const initialState = () => {
+    const savedTasks = localStorage.getItem("Items");
+    const parsedValue = JSON.parse(savedTasks);
+    return parsedValue || [];
+  };
 
-  const [todos, dispatch] = useReducer(tasksReducer, [])
+  const [todos, dispatch] = useReducer(tasksReducer, initialState());
 
+  useEffect(() => {
+    localStorage.setItem("Items", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <>
@@ -31,5 +36,3 @@ function App() {
 }
 
 export default App;
-
-
