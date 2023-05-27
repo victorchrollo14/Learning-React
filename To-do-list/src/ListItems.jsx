@@ -58,14 +58,7 @@ export function ListItems({ todos, dispatch }) {
       setIsShown(true, id);
       setNewTask(task);
     } else {
-      // setTodos((currentTodo) =>
-      //   currentTodo.map((todo) => {
-      //     if (todo.id === id) {
-      //       return { ...todo, task: newtask };
-      //     }
-      //     return todo;
-      //   })
-      // );
+      
 
       dispatch({
         type: "edit",
@@ -77,9 +70,7 @@ export function ListItems({ todos, dispatch }) {
   }
 
   function setIsShown(truth, id) {
-    // setTodos((currentTodo) => currentTodo.map(todo =>
-    //   todo.id === id? {...todo, isShown: truth}: {...todo, isShown: false}
-    // ))
+    
     dispatch({
       type: "togglebtn",
       id: id,
@@ -92,15 +83,7 @@ export function ListItems({ todos, dispatch }) {
   }
 
   function toggleToDo(id, completed) {
-    // Good
-    // setTodos((currentTodo) =>
-    //   currentTodo.map((todo) => {
-    //     if (todo.id === id) {
-    //       return { ...todo, completed };
-    //     }
-    //     return todo;
-    //   })
-    // );
+    
     dispatch({
       type: "toggle",
       id: id,
@@ -109,8 +92,7 @@ export function ListItems({ todos, dispatch }) {
   }
 
   function deleteToDo(id) {
-    // let currentTodo = todos.filter(todo => todo.id !== id );
-    // setTodos(currentTodo);
+    
     dispatch({
       type: "delete",
       id: id,

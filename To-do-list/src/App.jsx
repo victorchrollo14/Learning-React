@@ -6,11 +6,6 @@ import { ListItems } from "./ListItems";
 import { tasksReducer } from "./TaskReducer";
 
 function App() {
-  // const [todos, setTodos] = useState(() => {
-  //   const savedTasks = localStorage.getItem("Items");
-  //   const parsedValue = JSON.parse(savedTasks);
-  //   return parsedValue || [];
-  // });
 
   const initialState = () => {
     const savedTasks = localStorage.getItem("Items");

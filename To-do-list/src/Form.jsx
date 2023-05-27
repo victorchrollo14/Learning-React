@@ -5,16 +5,7 @@ export function Form({ todos, dispatch }) {
 
   function addToDo(e) {
     e.preventDefault();
-    // let newTodo = [
-    //   ...todos,
-    //   {
-    //     id: crypto.randomUUID(),
-    //     task: userInput,
-    //     completed: false,
-    //     isShown: false,
-    //   },
-    // ];
-    // setTodos(newTodo);
+  
     dispatch({
         type: "add",
         id: crypto.randomUUID(),
